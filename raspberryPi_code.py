@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO ## Import GPIO library
 import time ## Import 'time' library. Allows us to use 'sleep'
 
 GPIO.setmode(GPIO.BOARD) ## Use board pin numbering
-GPIO.setup(26, GPIO.OUT) ## Setup GPIO Pin 7 to OUT
+GPIO.setup(32, GPIO.OUT) ## Setup GPIO Pin 7 to OUT
 
 ##Define a function named Blink()
 def Blink(numTimes,speed):
