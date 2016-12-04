@@ -8,9 +8,9 @@ GPIO.setup(32, GPIO.OUT) ## Setup GPIO Pin 7 to OUT
 def Blink(numTimes,speed):
     for i in range(0,numTimes):## Run loop numTimes
         print "Iteration " + str(i+1)## Print current loop
-        GPIO.output(26,True)## Switch on pin 7
+        GPIO.output(32,True)## Switch on pin 7
         time.sleep(speed)## Wait
-        GPIO.output(26,False)## Switch off pin 7
+        GPIO.output(32,False)## Switch off pin 7
         time.sleep(speed)## Wait
         print "Done" ## When loop is complete, print "Done"
         GPIO.cleanup()
