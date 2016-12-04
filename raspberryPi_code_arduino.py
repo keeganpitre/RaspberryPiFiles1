@@ -1,5 +1,6 @@
 import RPi.GPIO as GPIO ## Import GPIO library
 import time ## Import 'time' library. Allows us to use 'sleep'
+import serial
 
 GPIO.setmode(GPIO.BOARD) ## Use board pin numbering
 GPIO.setup(32, GPIO.OUT) ## Setup GPIO Pin 7 to OUT
@@ -14,4 +15,3 @@ while z==0:
     var = raw_input("Please enter something: ")
     print(var)
     ser.write(var)
-    
