@@ -19,12 +19,12 @@ print("The code is running!")
 
 try:
 	RxScok.bind((HOST,PORT))
-except socker.error:
+except socket.error:
 	print("Bind Failed")
 
 try:
 	TxScok.bind((HOST,PORT))
-except socker.error:
+except socket.error:
 	print("Bind Failed")
 
 RxSock.listen(1)
