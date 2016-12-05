@@ -4,7 +4,8 @@ import serial
 import socket
 
 HOST = '192.168.1.136'
-PORT = 12345
+RPORT = 12345
+TPORT = 12346
 
 RxSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 TxSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -18,12 +19,12 @@ ser = serial.Serial('/dev/ttyUSB0',9600, timeout=0, writeTimeout=0)
 print("The code is running!")
 
 try:
-	RxScok.bind((HOST,PORT))
+	RxSockk.bind((HOST,RPORT))
 except socket.error:
 	print("Bind Failed")
 
 try:
-	TxScok.bind((HOST,PORT))
+	TxSock.bind((HOST,TPORT))
 except socket.error:
 	print("Bind Failed")
 
