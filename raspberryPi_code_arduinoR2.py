@@ -23,7 +23,7 @@ except socket.error:
 	print("Bind Failed")
 
 try:
-	TxSock.bind((HOST,RPORT))
+	TxSock.bind((HOST,TPORT))
 except socket.error:
 	print("Bind Failed")
 
