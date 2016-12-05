@@ -5,8 +5,9 @@ import socket
 
 HOST = '192.168.1.136'
 RPORT = 12345
-
+TPORT = 12347
 RxSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+TxSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 print('Socket Created')
 
@@ -21,15 +22,17 @@ try:
 except socket.error:
 	print("Bind Failed")
 
+try:
+	TxSock.bind((HOST,RPORT))
+except socket.error:
+	print("Bind Failed")
+
 RxSock.listen(1)
 print 'Socket awaiting messages'
 (conn,addr) = RxSock.accept()
 print 'Connected'
 
-z=0
-
-
-while z==0:
+while True:
     wifi_data = conn.recv(1024)
     ser_data = ser.readline()
     if wifi_data is not None:
@@ -37,8 +40,6 @@ while z==0:
         ser.write(wifi_data)
     if ser_data is not None:
         print("This is being sent " + str(ser_data))
-        RxSock.send(ser_data)
-
-
+        TxSock.send(ser_data)
 
 conn.close()
