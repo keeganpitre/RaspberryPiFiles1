@@ -17,4 +17,4 @@ def flask_function(data):
 if __name__ == "__main__":
     global ser
     ser = serial.Serial('/dev/ttyUSB0', 9600, timeout=0, writeTimeout=0)
-    app.run()
+    app.run(host='0.0.0.0')
