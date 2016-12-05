@@ -41,6 +41,6 @@ while True:
         ser.write(wifi_data)
         print("This is being sent " + str(ser_data))
         # TxSock.send(ser_data)
-        # RxSock.send(ser_data)
+        RxSock.send(ser_data)
 
 conn.close()
