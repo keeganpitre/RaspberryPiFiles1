@@ -10,7 +10,7 @@ def flask_function(data):
     global ser
     ser.write(data)
     time.sleep(0.05)
-    if '+' in data:
+    if '+1' in data:
         return ser.readline()
     else:
         something = "OK"
