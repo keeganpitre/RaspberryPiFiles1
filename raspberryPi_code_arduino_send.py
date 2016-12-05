@@ -4,9 +4,8 @@ import serial
 import socket
 
 HOST = '192.168.1.136'
-RPORT = 12345
 TPORT = 12347
-RxSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
 TxSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 print('Socket Created')
@@ -33,12 +32,6 @@ print 'Socket awaiting messages'
 # TxSock.accept()
 print 'Connected'
 
-TxSock.listen(1)
-print 'Socket awaiting messages'
-(connT,addrT) = TxSock.accept()
-# TxSock.accept()
-print 'Connected'
-
 while True:
     wifi_data = conn.recv(1024)
 
@@ -49,6 +42,6 @@ while True:
         print("This is being sent " + str(ser_data))
         # TxSock.send(ser_data)
         time.sleep(0.05)
-        TxSock.send(ser_data)
+        RxSock.send(ser_data)
 
 conn.close()
