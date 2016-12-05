@@ -48,7 +48,6 @@ while True:
         ser_data = ser.readline()
         print("This is being sent " + str(ser_data))
         # TxSock.send(ser_data)
-        time.sleep(0.05)
         TxSock.send(ser_data)
 
 conn.close()
