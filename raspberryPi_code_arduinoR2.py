@@ -19,7 +19,7 @@ ser = serial.Serial('/dev/ttyUSB0',9600, timeout=0, writeTimeout=0)
 print("The code is running!")
 
 try:
-	RxSockk.bind((HOST,RPORT))
+	RxSock.bind((HOST,RPORT))
 except socket.error:
 	print("Bind Failed")
 
