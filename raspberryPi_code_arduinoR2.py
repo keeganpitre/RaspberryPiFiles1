@@ -30,6 +30,7 @@ except socket.error:
 RxSock.listen(1)
 print 'Socket awaiting messages'
 (conn,addr) = RxSock.accept()
+# TxSock.accept()
 print 'Connected'
 
 while True:
@@ -38,8 +39,8 @@ while True:
     if wifi_data is not None:
         print("This is the data " + str(wifi_data))
         ser.write(wifi_data)
-    if ser_data is not None:
         print("This is being sent " + str(ser_data))
-        TxSock.send(ser_data)
+        # TxSock.send(ser_data)
+        RxSock.send(ser_data)
 
 conn.close()
