@@ -30,9 +30,15 @@ z=0
 
 
 while z==0:
-    data = conn.recv(1024)
-    print("This is the data " + str(data))
-    ser.write(data)
+    wifi_data = conn.recv(1024)
+    ser_data = ser.readline()
+    if wifi_data is not None:
+        print("This is the data " + str(wifi_data))
+        ser.write(wifi_data)
+    if ser_data is not None:
+        print("This is being sent " + str(ser_data))
+        RxSock.send(ser_data)
+
 
 
 conn.close()
