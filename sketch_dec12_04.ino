@@ -38,7 +38,7 @@ bool timerVar = 0;
 long start=15;
 //Safety Value that turns machine off if arduino sees more then X number of volts
 int safety_cap_val;
-int safety_limit = 50;
+int safety_limit = 350;
 int charge_led_ind = 30;  
 
 void setup() {

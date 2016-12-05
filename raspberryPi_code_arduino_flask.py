@@ -1,7 +1,6 @@
 import RPi.GPIO as GPIO ## Import GPIO library
 import time ## Import 'time' library. Allows us to use 'sleep'
 import serial
-import socket
 from flask import Flask
 app = Flask(__name__)
 
