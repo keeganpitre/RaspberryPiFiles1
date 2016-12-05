@@ -8,13 +8,19 @@ app = Flask(__name__)
 @app.route("/<data>")
 def flask_function(data):
     global ser
-    return 'hello'
-
     ser.write(data)
-    return ser.readline()
+    time.sleep(0.05)
+    if '+' in data:
+        return ser.readline()
+    else:
+        something = "OK"
+        return something
 
+@app.route("/")
+def just_return():
+    return 'I am running'
 
 if __name__ == "__main__":
     global ser
     ser = serial.Serial('/dev/ttyUSB0', 9600, timeout=0, writeTimeout=0)
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', port=5000)
