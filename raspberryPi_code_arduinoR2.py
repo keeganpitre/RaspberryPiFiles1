@@ -5,10 +5,8 @@ import socket
 
 HOST = '192.168.1.136'
 RPORT = 12345
-TPORT = 12346
 
 RxSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-TxSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 print('Socket Created')
 
@@ -20,11 +18,6 @@ print("The code is running!")
 
 try:
 	RxSock.bind((HOST,RPORT))
-except socket.error:
-	print("Bind Failed")
-
-try:
-	TxSock.bind((HOST,TPORT))
 except socket.error:
 	print("Bind Failed")
 
